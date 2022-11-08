@@ -33,7 +33,7 @@ const CreateDojoForm = () => {
 
   return (
     <div>
-      <h2>Add a dojo!</h2>
+      <h2>Create a dojo!</h2>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
