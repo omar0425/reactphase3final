@@ -1,11 +1,12 @@
-import React from 'react'
-import CreateCharacterForm from './CreateCharacterForm'
+import React from "react";
+import CreateDojoForm from "./CreateDojoForm";
 const MainCharacterPage = () => {
   return (
     <div>
-<CreateCharacterForm />
-    </div>
-  )
-}
+      <CreateDojoForm />
 
-export default MainCharacterPage
+    </div>
+  );
+};
+
+export default MainCharacterPage;
