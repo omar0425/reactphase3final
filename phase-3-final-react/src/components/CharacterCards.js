@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const CharacterCards = () => {
+const CharacterCards = ({ c }) => {
+  console.log(c.image);
+
   return (
-    <div>CharacterCards</div>
-  )
-}
+    <div className='card'>
+      <h2>{c.name}</h2>
+      <img src={c.image_url} alt={c.name} className='Character' />
+    </div>
+  );
+};
 
-export default CharacterCards
+export default CharacterCards;
