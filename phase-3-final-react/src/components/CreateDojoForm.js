@@ -17,7 +17,7 @@ const CreateDojoForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://loclahost:9292/dojos", {
+    fetch("http://localhost:9292/dojos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
