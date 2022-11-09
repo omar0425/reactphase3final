@@ -1,5 +1,7 @@
 
 import './App.css';
+import Nav from './components/Nav';
+
 import { useEffect,useState } from 'react';
 import MainCharacterPage from './components/MainCharacterPage';
 
@@ -22,10 +24,10 @@ function App() {
 
     
   return (
-    
+
     <div className="App">
-   <MainCharacterPage characters={characters}  dojoList ={dojoList}/>
-    </div>
+    <MainCharacterPage characters={characters}  dojoList ={dojoList}/>
+     </div>
   );
 }
 
