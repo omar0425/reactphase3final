@@ -22,6 +22,7 @@ function App() {
 
     
   return (
+    
     <div className="App">
    <MainCharacterPage characters={characters}  dojoList ={dojoList}/>
     </div>
