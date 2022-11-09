@@ -1,6 +1,7 @@
 
 import './App.css';
 import Nav from './components/Nav';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import { useEffect,useState } from 'react';
 import MainCharacterPage from './components/MainCharacterPage';
@@ -26,7 +27,13 @@ function App() {
   return (
 
     <div className="App">
-    <MainCharacterPage characters={characters}  dojoList ={dojoList}/>
+       <BrowserRouter>
+    <Nav />
+      <Routes>
+        <Route path='/' element={<MainCharacterPage dojoList={dojoList} characters={characters}/>} />
+        
+      </Routes>
+    </BrowserRouter>
      </div>
   );
 }
