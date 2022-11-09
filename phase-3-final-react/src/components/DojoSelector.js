@@ -1,24 +1,25 @@
 import React,{useState} from "react";
 
-const DojoSelector = ({dojoList}) => {
-  const[dojoId,setDojoId] = useState("")
+const DojoSelector = ({dojoList,id}) => {
+  const[dojoId,setDojoId] = useState(0)
   
   function onCategoryChange(dojo){
     setDojoId(dojo)
   }
 
-  function handleAddDojo(){
-    const char_dojo = {
-      character_id: id,
-      dojo_id: dojoId 
-      };
+  function handleAddDojo(e){
+    e.preventDefault()
 
-    fetch(`http://localhost:9292/`, {
+    fetch(`http://localhost:9292/characters/${id}/dojos`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(char_dojo),
+      body: JSON.stringify({
+        dojo_id: dojoId
+      }
+
+      ),
     });
   }
 
@@ -27,7 +28,7 @@ const DojoSelector = ({dojoList}) => {
   
  
   return (
-    <form onSubmit ={handleAddToDojo}>
+    <form onSubmit ={handleAddDojo}>
       <select 
       value={dojoId}
       id={dojoId}

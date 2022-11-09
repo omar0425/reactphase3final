@@ -15,6 +15,7 @@ const MainCharacterPage = ({ characters,dojoList }) => {
       dojoList={dojoList}
       
       
+      
     />
   ));
 
