@@ -36,6 +36,7 @@ function App() {
                 dojoList={dojoList}
                 characters={characters}
                 setDojoList={setDojoList}
+                setCharacters ={setCharacters}
               />
             }
           />

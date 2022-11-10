@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CreateCharacterForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    portrayed: "",
-    image: "",
-  });
+const CreateCharacterForm = ({handleSubmit,setFormData,formData}) => {
+
   
 
   function handleChange(e) {
@@ -16,7 +12,7 @@ const CreateCharacterForm = () => {
   }
   
 
-  function handleSubmit() {}
+  
 
   return (
     <div>
@@ -29,15 +25,7 @@ const CreateCharacterForm = () => {
           name="name"
           placeholder='Enter a character name'
         />
-       
-        <input
-          type='text'
-          onChange={handleChange}
-          value={formData.portrayed}
-          placeholder="Enter the actor's name "
-          name="portrayed"
-        />
-        
+
         <input
           type='text'
           onChange={handleChange}
