@@ -30,6 +30,16 @@ const MainCharacterPage = ({
       .then((r) => r.json())
       .then((newCharacter) => setCharacters([...characters, newCharacter]));
   }
+    function onDeleteCharacter(id) {
+    fetch(`http://localhost:9292/character/${id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then((deletedCharacter) => {
+        const modifiedCharacterData = characters.filter(character => character.id !== deletedCharacter.id)
+        setCharacters(modifiedCharacterData)
+      });
+  }
 
   const charCards = characters.map((c) => (
     <CharacterCards
@@ -40,6 +50,7 @@ const MainCharacterPage = ({
       id={c.id}
       key={c.id}
       dojoList={dojoList}
+      onDeleteCharacter={onDeleteCharacter}
     />
   ));
 
