@@ -3,10 +3,10 @@ import DojoCharacterCards from "./DojoCharacterCards";
 
 const CharacterDojoPage = ({ dojoList }) => {
   const [dojoId, setDojoId] = useState(1);
+  
   const [dojoCharacters, setDojoCharacters] = useState({
-    characters: [{}],
+    characters: [],
   });
-
   useEffect(() => {
     fetch(`http://localhost:9292/dojo/${dojoId}`)
       .then((r) => r.json())
@@ -16,7 +16,7 @@ const CharacterDojoPage = ({ dojoList }) => {
   function onCategoryChange(dojo) {
     setDojoId(dojo);
   }
-console.log(dojoList)
+console.log(dojoCharacters.characters)
   const dojoCharCards = dojoCharacters.characters.map((c) => (
     
     <DojoCharacterCards

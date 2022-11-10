@@ -9,10 +9,8 @@ const MainCharacterPage = ({
   setDojoList,
   setCharacters,
 }) => {
-  
   const [formData, setFormData] = useState({
     name: "",
-
     image: "",
   });
 

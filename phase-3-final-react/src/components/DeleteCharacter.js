@@ -4,7 +4,7 @@ const DeleteCharacter = () => {
   return (
     <div>
       <button onClick ={()=>handleDelete()}>
-        DeleteCharacter
+        Delete Character
       </button>
     </div>
   )
