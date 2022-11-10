@@ -1,8 +1,7 @@
 import React from "react";
 import CharacterCards from "./CharacterCards";
 import CreateDojoForm from "./CreateDojoForm";
-const MainCharacterPage = ({ characters,dojoList }) => {
-
+const MainCharacterPage = ({ characters, dojoList, setDojoList }) => {
 
   const charCards = characters.map((c) => (
     <CharacterCards
@@ -13,15 +12,12 @@ const MainCharacterPage = ({ characters,dojoList }) => {
       id={c.id}
       key={c.id}
       dojoList={dojoList}
-      
-      
-      
     />
   ));
 
   return (
     <div>
-      <CreateDojoForm />
+      <CreateDojoForm dojoList={dojoList} setDojoList={setDojoList} />
       {charCards}
     </div>
   );

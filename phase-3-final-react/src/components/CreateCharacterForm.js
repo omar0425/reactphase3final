@@ -6,7 +6,7 @@ const CreateCharacterForm = () => {
     portrayed: "",
     image: "",
   });
-  console.log(formData)
+  
 
   function handleChange(e) {
     setFormData({

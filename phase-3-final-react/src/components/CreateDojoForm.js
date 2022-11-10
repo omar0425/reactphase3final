@@ -1,11 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-const CreateDojoForm = () => {
-
+const CreateDojoForm = ({ dojoList, setDojoList }) => {
   const [formData, setFormData] = useState({
     name: "",
   });
-  
 
   function handleChange(e) {
     setFormData({
@@ -13,7 +11,6 @@ const CreateDojoForm = () => {
       [e.target.name]: e.target.value,
     });
   }
-  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,12 +20,13 @@ const CreateDojoForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: formData.name
-      })
+        name: formData.name,
+      }),
     })
       .then((r) => r.json())
-      .then((newDojo)=> console.log(newDojo))
-
+      .then((newDojo) => {
+        setDojoList([...dojoList, newDojo]);
+      });
   }
 
   return (
