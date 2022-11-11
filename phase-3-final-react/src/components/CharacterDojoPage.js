@@ -3,7 +3,7 @@ import DojoCharacterCards from "./DojoCharacterCards";
 
 const CharacterDojoPage = ({ dojoList }) => {
   const [dojoId, setDojoId] = useState(1);
-  
+
   const [dojoCharacters, setDojoCharacters] = useState({
     characters: [],
   });
@@ -12,13 +12,12 @@ const CharacterDojoPage = ({ dojoList }) => {
       .then((r) => r.json())
       .then((characters) => setDojoCharacters(characters));
   }, [dojoId]);
-  
+
   function onCategoryChange(dojo) {
     setDojoId(dojo);
   }
-console.log(dojoCharacters.characters)
+
   const dojoCharCards = dojoCharacters.characters.map((c) => (
-    
     <DojoCharacterCards
       c={c}
       name={c.name}
@@ -27,25 +26,22 @@ console.log(dojoCharacters.characters)
       id={c.id}
       key={c.id}
     />
-    
   ));
   return (
     <div>
-    <select
-      value={dojoId}
-      id={dojoId}
-      onChange={(e) => onCategoryChange(e.target.value)}
-      
-    >
-      
-      <option value=''>Choose Dojo</option>
-      {dojoList.map((dojo,index) => (
-        <option key={index} value={dojo.id} >
-          {dojo.name}
-        </option>
-      ))}
-    </select>
-    {dojoCharCards}
+      <select
+        value={dojoId}
+        id={dojoId}
+        onChange={(e) => onCategoryChange(e.target.value)}
+      >
+        <option className= "option" value=''>Choose Dojo</option>
+        {dojoList.map((dojo, index) => (
+          <option key={index} value={dojo.id}>
+            {dojo.name}
+          </option>
+        ))}
+      </select>
+      {dojoCharCards}
     </div>
   );
 };
