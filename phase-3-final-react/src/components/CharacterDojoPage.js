@@ -34,7 +34,9 @@ const CharacterDojoPage = ({ dojoList }) => {
         id={dojoId}
         onChange={(e) => onCategoryChange(e.target.value)}
       >
-        <option className= "option" value=''>Choose Dojo</option>
+        <option className='option' value=''>
+          Choose Dojo
+        </option>
         {dojoList.map((dojo, index) => (
           <option key={index} value={dojo.id}>
             {dojo.name}

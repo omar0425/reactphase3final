@@ -30,9 +30,14 @@ code {
   margin: 1rem 2rem;
   box-shadow: 5px 6px gray;
 }
-.option {
-  
-    display: block;
-    margin: 0 auto;
-    
+.card--dojo{
+  text-align: center;
+  border: grey solid 1px;
+  padding: 4rem;
+  width: 14rem;
+  height: 35rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 5px 6px gray;
+
 }

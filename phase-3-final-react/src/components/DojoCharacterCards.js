@@ -3,7 +3,7 @@ import React from 'react'
 const DojoCharacterCards = ({c}) => {
  
   return (
-    <div className='card'>
+    <div className='card--dojo'>
       <h2>{c.name}</h2>
       <img className="pic" src={c.image_url} alt={c.name}  />
       </div>
